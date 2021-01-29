@@ -38,7 +38,7 @@ with open(csvpath) as csvfile:
     Tooley_Percent = (Tooley/Total_Votes) * 100
 
 #If state to see who the winner is
-
+winner = str()
 if Khan > Correy and Khan > Li and Khan> Tooley:
     winner = "kahn"
 elif Correy > Khan and Correy > Li and Correy > Tooley:
@@ -50,19 +50,21 @@ elif Tooley > Khan and Tooley > Li and Tooley > Correy:
 
 
 
+print("Election Results")
+print("-----------------")
+print("Total Votes: " + (str(Total_Votes)))
+print("-----------------")
+print(f"Khan: {Khan_Percent}% ({Khan})")
+print(f"Correy: {Correy_Percent}% ({Correy})")
+print(f"Khan: {Li_Percent}% ({Li})")
+print(f"Khan: {Tooley_Percent}% ({Tooley})")
+print("-----------------")
+print(f"Winner: {winner}")
+print("-----------------"))
 
-print("Election Results", file=open("PyPoll.txt", "Access_Mode"))
-print("-----------------")
-print("Total Votes: " + (str(Total_Votes), file=open("PyPoll.txt", "Access_Mode")))
-print("-----------------")
-print(f"Khan: {Khan_Percent}% ({Khan})", file=open("PyPoll.txt", "Access_Mode"))
-print(f"Correy: {Correy_Percent}% ({Correy})", file=open("PyPoll.txt", "Access_Mode"))
-print(f"Khan: {Li_Percent}% ({Li})" , file=open("PyPoll.txt", "Access_Mode"))
-print(f"Khan: {Tooley_Percent}% ({Tooley})", file=open("PyPoll.txt", "Access_Mode"))
-print("-----------------", file=open("PyPoll.txt", "Access_Mode"))
-print(f"Winner: {winner}", file=open("PyPoll.txt", "Access_Mode"))
-print("-----------------", file=open("PyPoll.txt", "Access_Mode"))
+   
 
 #Export Text file
-file = open("PyPoll.txt","Access_Mode")
 
+khan = f"Khan: {Khan_Percent}% ({Khan})"
+txt_file.write(khan)
