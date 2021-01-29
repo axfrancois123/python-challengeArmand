@@ -41,13 +41,25 @@ month2 = Profit_Change.index(min(Profit_Change)) + 1
 
 
 
-print("Financial Analyst", file=open("PyBank.txt", "Access_Mode"))
-print("---------------------", file=open("PyBank.txt", "Access_Mode"))
-print("Months: " + str(bount), file=open("PyBank.txt", "Access_Mode"))
-print(f"Total: ${sum(Total_PL)}", file=open("PyBank.txt", "Access_Mode"))
-print(f"Average Change: {round(sum(Profit_Change)/len(Profit_Change),2)}", file=open("PyBank.txt", "Access_Mode"))
-print(f"Greatest Increase in Profits: {countMonths[month1]} (${(str(maxProfit))})", file=open("PyBank.txt", "Access_Mode"))
-print(f"Greatest Decrease in Profits: {countMonths[month2]} (${(str(minProfit))})", file=open("PyBank.txt", "Access_Mode"))
+print("Financial Analyst")
+print("---------------------")
+print("Months: " + str(bount))
+print(f"Total: ${sum(Total_PL)}")
+print(f"Average Change: {round(sum(Profit_Change)/len(Profit_Change),2)}")
+print(f"Greatest Increase in Profits: {countMonths[month1]} (${(str(maxProfit))})")
+print(f"Greatest Decrease in Profits: {countMonths[month2]} (${(str(minProfit))})")
 
 #Export Text File
-file = open("PyBank.txt","Access_Mode")
+output_path = 'output.txt'
+# Open the output path as a file object
+with open(output_path, 'w') as file:
+    # Write analysis to the output file
+    file.write("Financial Analysis\n")
+    file.write("----------------------------\n")
+    file.write(f"Total Months: " + str(bount))
+    file.write(f"Total: ${sum(Total_PL)}")
+    file.write(f"Average Change: {round(sum(Profit_Change)/len(Profit_Change),2)}")
+    file.write(f"Greatest Increase in Profits: {countMonths[month1]} (${(str(maxProfit))})"
+    file.write(f"Greatest Decrease in Profits: {countMonths[month2]} (${(str(minProfit))})"
+
+
